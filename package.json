@@ -13,6 +13,7 @@
     "watch-sync": "cross-env NODE_ENV=development concurrently \"npm run browser-sync\" \"npm run watch\""
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.7",
     "browser-sync": "^2.27.10",
     "concurrently": "^7.3.0",
