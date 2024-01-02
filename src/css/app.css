@@ -55,7 +55,7 @@
   @apply absolute z-10 top-[80px] left-1/2 -translate-x-1/2 2xl:top-[130px] 3xl:top-[210px];
 }
 .slide-01-fg {
-  @apply absolute z-10 top-[0px] left-1/2 -translate-x-[64px] 2xl:top-[0px] 3xl:-top-60 w-[380px];
+  @apply absolute z-10 top-[0px] left-1/2 -translate-x-[64px] 2xl:-top-36;
 }
 .slide-02-sea {
   @apply block w-[120%] h-full object-cover absolute top-0 left-0 z-0 origin-top-left;
@@ -95,7 +95,7 @@
     @apply translate-y-[100px] scale-105 3xl:translate-y-[0px];
   }
   .slide-01-fg {
-    @apply translate-y-[100px] scale-105 3xl:translate-y-[0px];
+    @apply translate-y-[100px] scale-105 2xl:translate-y-[100px];
   }
   .slide-02-sea {
     @apply scale-[120%];
