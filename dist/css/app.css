@@ -936,12 +936,8 @@ video {
   width: 40%;
 }
 
-.w-5\/12 {
-  width: 41.666667%;
-}
-
-.w-7\/12 {
-  width: 58.333333%;
+.w-6\/12 {
+  width: 50%;
 }
 
 .w-2\/3 {
@@ -960,12 +956,12 @@ video {
   min-width: 100%;
 }
 
-.max-w-screen-2xl {
-  max-width: 1440px;
-}
-
 .max-w-screen-xl {
   max-width: 1280px;
+}
+
+.max-w-\[480px\] {
+  max-width: 480px;
 }
 
 .max-w-screen-sm {
@@ -1085,11 +1081,6 @@ video {
 
 .gap-4 {
   gap: 1rem;
-}
-
-.gap-x-10 {
-  -moz-column-gap: 2.5rem;
-       column-gap: 2.5rem;
 }
 
 .gap-x-2 {
@@ -1284,10 +1275,6 @@ video {
   --tw-bg-opacity: 0.9;
 }
 
-.bg-clip-padding {
-  background-clip: padding-box;
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1308,14 +1295,19 @@ video {
   padding-bottom: 2rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .py-4 {
@@ -1371,16 +1363,6 @@ video {
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
-}
-
-.px-0 {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .pt-16 {
@@ -2298,9 +2280,14 @@ body {
 }
 
 .slide-01-bg, 
+.slide-01-fg, 
 .slide-01-cargo, 
 .slide-02-sea, 
 .slide-02-ship, 
+.slide-02-bg, 
+.slide-02-fg, 
+.slide-03-bg, 
+.slide-03-fg, 
 .slide-03-sky, 
 .slide-03-cargo, 
 .slide-04-bg, 
@@ -2312,36 +2299,12 @@ body {
   transition-timing-function: linear;
 }
 
-.slide-04-bg {
-  display: block;
-  height: 100%;
-  width: 100%;
-  transform-origin: bottom right;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  background-position: bottom;
-  -o-object-fit: cover;
-     object-fit: cover;
+/* .slide-04-bg {
+  @apply block w-full h-full object-cover bg-bottom origin-bottom-right scale-100;
 }
-
 .slide-04-fg {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  z-index: 10;
-  height: 100%;
-  width: 100%;
-  transform-origin: bottom left;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  background-position: bottom;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
+  @apply absolute inset-0 h-full w-full object-cover z-10 bg-bottom scale-100 origin-bottom-left;
+} */
 
 .slide-01-bg {
   display: block;
@@ -2374,6 +2337,28 @@ body {
   }
 }
 
+.slide-01-fg {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  z-index: 10;
+  width: 380px;
+  --tw-translate-x: -64px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@media (min-width: 1440px) {
+  .slide-01-fg {
+    top: 0px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .slide-01-fg {
+    top: -15rem;
+  }
+}
+
 .slide-02-sea {
   position: absolute;
   top: 0px;
@@ -2393,6 +2378,80 @@ body {
   bottom: 0px;
   z-index: 10;
   width: 50%;
+  transform-origin: bottom right;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.slide-02-bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  display: block;
+  height: 100%;
+  width: 120%;
+  transform-origin: top left;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slide-02-fg {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 10;
+  width: 60%;
+  transform-origin: bottom right;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.slide-03-bg {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform-origin: top;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  background-position: bottom;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slide-03-fg {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 10;
+  transform-origin: bottom left;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.slide-04-bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  display: block;
+  height: 100%;
+  width: 120%;
+  transform-origin: top left;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slide-04-fg {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 10;
+  width: 40%;
   transform-origin: bottom right;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
@@ -2444,6 +2503,20 @@ body {
   }
 }
 
+.swiper-slide-active .slide-01-fg {
+  --tw-translate-y: 100px;
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@media (min-width: 1536px) {
+  .swiper-slide-active .slide-01-fg {
+    --tw-translate-y: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+}
+
 .swiper-slide-active .slide-02-sea {
   --tw-scale-x: 120%;
   --tw-scale-y: 120%;
@@ -2451,6 +2524,30 @@ body {
 }
 
 .swiper-slide-active .slide-02-ship {
+  --tw-scale-x: 120%;
+  --tw-scale-y: 120%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.swiper-slide-active .slide-02-bg {
+  --tw-scale-x: 110%;
+  --tw-scale-y: 110%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.swiper-slide-active .slide-02-fg {
+  --tw-scale-x: 120%;
+  --tw-scale-y: 120%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.swiper-slide-active .slide-04-bg {
+  --tw-scale-x: 110%;
+  --tw-scale-y: 110%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.swiper-slide-active .slide-04-fg {
   --tw-scale-x: 120%;
   --tw-scale-y: 120%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2467,13 +2564,13 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.swiper-slide-active .slide-04-bg {
+.swiper-slide-active .slide-03-bg {
   --tw-scale-x: 115%;
   --tw-scale-y: 115%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.swiper-slide-active .slide-04-fg {
+.swiper-slide-active .slide-03-fg {
   --tw-scale-x: 115%;
   --tw-scale-y: 115%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2533,9 +2630,9 @@ body {
   margin-right: 0px;
 }
 
-.hover\:bg-primary:hover {
+.hover\:bg-secondary:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 122 0 / var(--tw-bg-opacity));
+  background-color: rgb(246 178 33 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-\[\#fab711\]:hover {
@@ -2553,11 +2650,18 @@ body {
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-secondary:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(246 178 33 / var(--tw-bg-opacity));
-}
-
 .hover\:text-opacity-100:hover {
   --tw-text-opacity: 1;
+}
+
+@media (min-width: 1440px) {
+  .\32xl\:max-w-\[1100px\] {
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\33xl\:max-w-\[1200px\] {
+    max-width: 1200px;
+  }
 }

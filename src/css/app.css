@@ -1,10 +1,10 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@import 'partials/global.css';
-@import 'partials/navbar.css';
-@import 'partials/scrollmagic.css';
+@import "partials/global.css";
+@import "partials/navbar.css";
+@import "partials/scrollmagic.css";
 
 #app {
   @apply relative w-full overflow-hidden;
@@ -28,32 +28,58 @@
   @apply absolute inset-0 overflow-hidden;
 }
 .slide-01-bg,
+.slide-01-fg,
 .slide-01-cargo,
 .slide-02-sea,
 .slide-02-ship,
+.slide-02-bg,
+.slide-02-fg,
+.slide-03-bg,
+.slide-03-fg,
 .slide-03-sky,
 .slide-03-cargo,
 .slide-04-bg,
 .slide-04-fg {
   @apply transition-all duration-[20000ms] ease-linear transform-gpu;
 }
-.slide-04-bg {
+/* .slide-04-bg {
   @apply block w-full h-full object-cover bg-bottom origin-bottom-right scale-100;
 }
 .slide-04-fg {
   @apply absolute inset-0 h-full w-full object-cover z-10 bg-bottom scale-100 origin-bottom-left;
-}
+} */
 .slide-01-bg {
   @apply block w-full h-full object-cover bg-bottom origin-bottom;
 }
 .slide-01-cargo {
   @apply absolute z-10 top-[80px] left-1/2 -translate-x-1/2 2xl:top-[130px] 3xl:top-[210px];
 }
+.slide-01-fg {
+  @apply absolute z-10 top-[0px] left-1/2 -translate-x-[64px] 2xl:top-[0px] 3xl:-top-60 w-[380px];
+}
 .slide-02-sea {
   @apply block w-[120%] h-full object-cover absolute top-0 left-0 z-0 origin-top-left;
 }
 .slide-02-ship {
   @apply absolute right-0 bottom-0 z-10 w-[50%] scale-100 origin-bottom-right;
+}
+.slide-02-bg {
+  @apply block w-[120%] h-full object-cover absolute top-0 left-0 z-0 origin-top-left;
+}
+.slide-02-fg {
+  @apply absolute right-0 bottom-0 z-10 w-[60%] scale-100 origin-bottom-right;
+}
+.slide-03-bg {
+  @apply block w-full h-full object-cover bg-bottom origin-top scale-100;
+}
+.slide-03-fg {
+  @apply absolute right-0 bottom-0 z-10 scale-100 origin-bottom-left;
+}
+.slide-04-bg {
+  @apply block w-[120%] h-full object-cover absolute top-0 left-0 z-0 origin-top-left;
+}
+.slide-04-fg {
+  @apply absolute right-0 bottom-0 z-10 w-[40%] scale-100 origin-bottom-right;
 }
 .slide-03-sky {
   @apply block w-full h-[80%] object-cover absolute top-0 left-0 z-0;
@@ -68,10 +94,25 @@
   .slide-01-cargo {
     @apply translate-y-[100px] scale-105 3xl:translate-y-[0px];
   }
+  .slide-01-fg {
+    @apply translate-y-[100px] scale-105 3xl:translate-y-[0px];
+  }
   .slide-02-sea {
     @apply scale-[120%];
   }
   .slide-02-ship {
+    @apply scale-[120%];
+  }
+  .slide-02-bg {
+    @apply scale-[110%];
+  }
+  .slide-02-fg {
+    @apply scale-[120%];
+  }
+  .slide-04-bg {
+    @apply scale-[110%];
+  }
+  .slide-04-fg {
     @apply scale-[120%];
   }
   .slide-03-sky {
@@ -80,10 +121,10 @@
   .slide-03-cargo {
     @apply scale-100;
   }
-  .slide-04-bg {
+  .slide-03-bg {
     @apply scale-[115%];
   }
-  .slide-04-fg {
+  .slide-03-fg {
     @apply scale-[115%];
   }
 }
